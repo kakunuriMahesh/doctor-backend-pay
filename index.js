@@ -12,6 +12,13 @@ app.use(cors({
   methods: ["GET", "POST"],
   credentials: true,
 }));
+
+// app.use(cors({
+//   origin: process.env.FRONTEND_URL || "http://localhost:5173",
+//   methods: ["GET", "POST"],
+//   credentials: true,
+// }));
+
 app.use(express.json());
 
 const razorpayInstance = new Razorpay({
