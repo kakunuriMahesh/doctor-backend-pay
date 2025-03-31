@@ -6,12 +6,24 @@ require("dotenv").config(); // Load environment variables
 const app = express();
 const port = process.env.PORT || 5000; // Use PORT from .env or default to 5000
 
-// Configure CORS to allow specific origin
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://yourdomain.com",
+  "http://anotherdomain.com",
+];
+
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: allowedOrigins,
   methods: ["GET", "POST"],
   credentials: true,
 }));
+
+// Configure CORS to allow specific origin
+// app.use(cors({
+//   origin: "http://localhost:5173",
+//   methods: ["GET", "POST"],
+//   credentials: true,
+// }));
 
 // app.use(cors({
 //   origin: process.env.FRONTEND_URL || "http://localhost:5173",
