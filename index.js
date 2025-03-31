@@ -10,6 +10,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://yourdomain.com",
   "http://anotherdomain.com",
+  "https://doctorform-main.onrender.com/",
 ];
 
 app.use(cors({
